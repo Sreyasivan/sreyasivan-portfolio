@@ -1,11 +1,11 @@
-/** Atlas for the "curly-hoodie" Codex pet: 8 columns × 11 rows of 192×208 cells. */
+/** Atlas layout for a Codex pet: 8 columns × 11 rows of 192×208 cells (the sheet itself is uploaded in the admin). */
 export const SHEET = { src: '/pet/curly-hoodie.webp', columns: 8, rows: 11, cellWidth: 192, cellHeight: 208 } as const
 
 export type PetState = 'idle' | 'running-right' | 'running-left' | 'waving' | 'jumping' | 'failed' | 'waiting' | 'running' | 'review'
 
 /** Row, frame count and playback speed for each animation. */
 export const STATES: Record<PetState, { row: number; frames: number; fps: number }> = {
-  idle: { row: 0, frames: 6, fps: 3 },
+  idle: { row: 0, frames: 1, fps: 1 }, // stands still when idle
   'running-right': { row: 1, frames: 8, fps: 8 },
   'running-left': { row: 2, frames: 8, fps: 8 },
   waving: { row: 3, frames: 4, fps: 4 },

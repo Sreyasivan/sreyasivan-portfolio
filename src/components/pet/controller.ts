@@ -5,8 +5,8 @@ import { SHEET, STATES, lookCell, type PetState } from './sprite'
 export type Mode = 'idle' | 'waiting' | 'working'
 
 const BASE: Record<Mode, PetState> = { idle: 'idle', waiting: 'waiting', working: 'running' }
-const WALK_SPEED = 55 // px per second: an unhurried stroll
-const STEP_FPS = 6 // walk-cycle frames per second: a calm, natural step
+const WALK_SPEED = 32 // px per second: a slow, unhurried stroll
+const STEP_FPS = 4 // walk-cycle frames per second: slow, calm steps
 const GAZE_HOLD = 4500 // ms the pet keeps looking after the cursor stops
 const GAZE_STEP = 260 // ms between gaze changes, so the head turns calmly
 // Emotions that can be held as a loop while the visitor is away; the rest play once.

@@ -71,12 +71,12 @@
       "enabled": true,
       "showOnPhones": true,
       "sprite": {
-        "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-pet.webp",
+        "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-pet-v2.webp",
         "alt": "Sreya Sivan pet sprite sheet"
       },
       "idleAfter": 30,
-      "idleAction": "work",
-      "idleRepeat": true,
+      "idleAction": "none",
+      "idleRepeat": false,
       "returnAction": "wave",
       "clickAction": "wave",
       "dropAction": "none",
@@ -801,8 +801,8 @@
       "alt": "Sreya Sivan, portrait"
     },
     {
-      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-pet.webp",
-      "filename": "sreya-pet.webp",
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-pet-v2.webp",
+      "filename": "sreya-pet-v2.webp",
       "alt": "Sreya Sivan pet sprite sheet"
     },
     {
