@@ -65,7 +65,7 @@
       "menuColor": null,
       "menuActiveColor": null,
       "menuFontSize": null,
-      "wordmarkFontSize": null
+      "wordmarkFontSize": 30
     },
     "pet": {
       "enabled": true,
