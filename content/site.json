@@ -389,8 +389,14 @@
         "client": null,
         "startDate": null,
         "completionDate": null,
-        "thumbnail": null,
-        "heroImage": null,
+        "thumbnail": {
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-cover.jpg",
+          "alt": "Zero-ETL Analytics Platform: PostgreSQL and Parquet logs in S3 queried in place by DuckDB, feeding a dashboard, with no ETL copy pipeline"
+        },
+        "heroImage": {
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-cover.jpg",
+          "alt": "Zero-ETL Analytics Platform: PostgreSQL and Parquet logs in S3 queried in place by DuckDB, feeding a dashboard, with no ETL copy pipeline"
+        },
         "heroVideo": null,
         "screenshots": [],
         "demoVideoUrl": null,
@@ -500,8 +506,14 @@
         "client": null,
         "startDate": null,
         "completionDate": null,
-        "thumbnail": null,
-        "heroImage": null,
+        "thumbnail": {
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-cover.jpg",
+          "alt": "Financial Analytics & Expense Tracker: illustration of a spending dashboard with line, donut and bar charts and JWT sign-in"
+        },
+        "heroImage": {
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-cover.jpg",
+          "alt": "Financial Analytics & Expense Tracker: illustration of a spending dashboard with line, donut and bar charts and JWT sign-in"
+        },
         "heroVideo": null,
         "screenshots": [],
         "demoVideoUrl": null,
@@ -592,8 +604,14 @@
         "client": null,
         "startDate": null,
         "completionDate": null,
-        "thumbnail": null,
-        "heroImage": null,
+        "thumbnail": {
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-cover.jpg",
+          "alt": "Notes App: illustration of colourful note cards with a lock for private, per-user notes"
+        },
+        "heroImage": {
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-cover.jpg",
+          "alt": "Notes App: illustration of colourful note cards with a lock for private, per-user notes"
+        },
         "heroVideo": null,
         "screenshots": [],
         "demoVideoUrl": null,
@@ -678,8 +696,14 @@
         "client": null,
         "startDate": null,
         "completionDate": null,
-        "thumbnail": null,
-        "heroImage": null,
+        "thumbnail": {
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-cover.jpg",
+          "alt": "Student Portal: illustration of role-based access cards"
+        },
+        "heroImage": {
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-cover.jpg",
+          "alt": "Student Portal: illustration of role-based access cards"
+        },
         "heroVideo": null,
         "screenshots": [],
         "demoVideoUrl": null,
@@ -772,6 +796,26 @@
       "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-sivan-portrait.jpg",
       "filename": "sreya-sivan-portrait.jpg",
       "alt": "Sreya Sivan, portrait"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-cover.jpg",
+      "filename": "zero-etl-cover.jpg",
+      "alt": "Zero-ETL Analytics Platform: PostgreSQL and Parquet logs in S3 queried in place by DuckDB, feeding a dashboard, with no ETL copy pipeline"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-cover.jpg",
+      "filename": "finance-tracker-cover.jpg",
+      "alt": "Financial Analytics & Expense Tracker: illustration of a spending dashboard with line, donut and bar charts and JWT sign-in"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-cover.jpg",
+      "filename": "notes-app-cover.jpg",
+      "alt": "Notes App: illustration of colourful note cards with a lock for private, per-user notes"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-cover.jpg",
+      "filename": "student-portal-cover.jpg",
+      "alt": "Student Portal: illustration of role-based access cards"
     }
   ]
 }
