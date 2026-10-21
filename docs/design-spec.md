@@ -1,0 +1,26 @@
+# Design spec
+
+## Homepage
+Exactly the reference measurements (see reference-analysis.md). Scoped to `.jg` so the rest of the site keeps its own scale. Dark by default; the light theme uses the reference's light values. Navigation choices from the CMS render as inline links in one bubble ("See what I've built, Read what I'm learning, A little about me and Get in touch"), matching the reference's "X, Bluesky and GitHub" pattern.
+
+## Inner pages (Yakudoo direction, on black)
+- Palette: `--bg #000`, elevated `#0d0d0d`, surface `#1c1c1e`, text `#f2f2f2`, muted `#8a8a8e`, hairline `rgba(255,255,255,.1)`. Accent presets: blue `#3d8bff`, orange `#ff5a1f`, green `#3ccf7a`, violet `#a78bfa`, neutral `#e5e5e5`.
+- Type: Inter (body), Barlow Condensed (condensed uppercase labels, nav, headings, project cards), Geist Mono (code). Fonts load through `next/font` with `display: swap`.
+- Shell: 232px sticky sidebar (wordmark top, numbered nav bottom, social links). Under 960px the sidebar becomes a slim top bar with the wordmark and a fixed bottom tab bar with the first five sections (numbered, current in the accent colour); a Menu in the top-right lists every section too and closes on outside tap, Escape or navigation. On phones the description page shows the back link at the top of the info column.
+- Projects: the Yakudoo structure on black. A 112 px thumbnail strip with numbers in the gutter, title tabs (page background, condensed uppercase, 40 px tall) overlaying the full-bleed visual as a stair-step edge. Rows are 56 px on the list background, no gaps: a 56 px number column (Barlow Condensed 300, 17 px, grey), a 100 × 56 thumbnail, and a title tab (Barlow Condensed 500, 15 px, uppercase, 20/40 px padding). The active row becomes a 76 px slate card (#3a3d44, the owner's swatch) that fits its content: a 44 px thin number, the thumbnail squeezed to a 6 px sliver, the title in Barlow Condensed 600 32 px / 35 px #f3f3eb, the category in 14 px sans, and a thin accent arrow at the card's right end. Sidebar: 220 px, wordmark top-left, numbered nav bottom-left in Barlow Condensed 600 22 px with 13 px grey numbers. The visual fills the whole stage edge to edge, under the number column, thumbnails and tabs. Visuals wipe in from the left (clip-path, 820 ms, cubic-bezier(.77,0,.18,1)) with a 6 % settle, then zoom once, very slowly, to 1.08 over 11 s and stop. The stage serves the original 3840 × 2400 still unoptimised for sharpness. The stage shows the high-resolution still; project order is Starter Kit first, Exasol Studio second. Hover, focus and arrow keys select; click opens. Under 960 px there is no hover state, so the explorer becomes a stack of full-width cards: picture on top with the number badge, then title, category and an orange arrow; tap to open.
+- Case study: 300 px sticky info column (accent eyebrow, 22 px sans title, 13 px lede, condensed labels with values, hairline, accent back link) and a media column: hero with a play overlay when a demo video URL is set (the player loads on click), CMS blocks with plain sans headings, an "Interface" two-column screenshot grid, and a "Next project" footer with thumbnail. The `article` preset collapses to one column.
+- Blog: list rows (date, read time, category | title, excerpt), search form, category chips. Articles are a single 820px column with cover, prose and related posts.
+- About: intro paragraphs, ordered sections (text, experience, education, certifications, publications, featured projects, technology groups), sticky photo or placeholder.
+- Research: publication cards with venue, authors, abstract, "My part" and DOI link.
+- Contact: three columns (work, profiles, email). No public email unless set in Site settings.
+
+## Appearance presets
+Theme, accent, font, heading scale, spacing, radius, link style, bubble style, animation intensity, animation speed and project display style map to `data-*` attributes on `<html>`. Only whitelisted values apply (`src/styles/theme.ts`).
+
+## Avatar
+`src/components/avatar/InteractiveAvatar.tsx` is an original chibi, Memoji-style avatar in inline SVG modelled on the owner (soft curls, light stubble, black hoodie), about 6.8 KB gzipped with its styles; no images, WebGL or animation library.
+- Turning: the head is split into parallax layers (ears, skull, face, hair) driven by `--x`/`--y` from the pointer, so it appears to rotate in 3D toward the cursor; pupils track it too. Eased in a requestAnimationFrame loop that runs only while it is settling.
+- Idle: random (sometimes double) blinks, breathing; after 30 s with no input it falls asleep (half-closed eyes, floating z's) and is startled awake by the next movement.
+- Reactions: hovering any link, button or project card → curious; clicking one → excited; clicking the avatar → happy bounce; typing in a field → thinking; /projects → excited, a project page → curious, /notes → thinking, /about → happy, /contact → waves.
+- API: `setExpression('idle' | 'happy' | 'curious' | 'thinking' | 'excited' | 'wave' | 'sleepy' | 'surprised', { hold?, duration? })` from `components/avatar/expressions`, or a ref handle.
+- Pauses offscreen and in hidden tabs; respects prefers-reduced-motion. Desktop sidebar, between the wordmark and the navigation.

@@ -1,0 +1,215 @@
+'use client'
+
+import Link from 'next/link'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import type { ProjectSummary } from '@/data/types'
+import type { ProjectsLook } from '@/data/content'
+import { Picture } from '@/components/Media/Picture'
+
+const pad = (n: number) => String(n).padStart(2, '0')
+
+/**
+ * The card number rolls like a clock: each digit makes one slow step from its previous value
+ * to the new one (the old digit slides up and out, the new one rises in), the first digit
+ * first and the second digit a moment later.
+ */
+function RollingNumber({ from, to }: { from: string; to: string }) {
+  return (
+    <span className="roll" aria-hidden="true" key={`${from}-${to}`}>
+      {to.split('').map((digit, i) => (
+        <span className="roll-digit" key={i} style={{ animationDelay: `${i * 160}ms` }}>
+          <span>{from[i] ?? '0'}</span>
+          <span>{digit}</span>
+        </span>
+      ))}
+    </span>
+  )
+}
+
+/**
+ * Project index in the Yakudoo structure: a full-bleed visual, a column of numbered
+ * thumbnails, and title tabs that overlay the visual as a stair-step edge. Activating a row
+ * (hover, focus, arrow keys) turns it into a card: the number rolls once, the thumbnail
+ * squeezes into a sliver, and the large title, category and arrow cross-fade in. The visual
+ * wipes in from the right.
+ */
+export function ProjectExplorer({ projects, look }: { projects: ProjectSummary[]; look?: ProjectsLook }) {
+  const [active, setActive] = useState(0)
+  const [previous, setPrevious] = useState<number | null>(null)
+  const [intro, setIntro] = useState(true)
+  const [loaded, setLoaded] = useState<Record<number, boolean>>({})
+
+  // The wipe and the cards wait until the active picture has actually loaded (with a safety timeout),
+  // so the animation never finishes over an empty stage.
+  useEffect(() => {
+    const medias = stageRef.current?.querySelectorAll<HTMLElement>('.stage-media') ?? []
+    const cleanups: (() => void)[] = []
+    medias.forEach((media, index) => {
+      const img = media.querySelector('img')
+      const mark = () => setLoaded((prev) => (prev[index] ? prev : { ...prev, [index]: true }))
+      if (!img || (img.complete && img.naturalWidth > 0)) return mark()
+      img.addEventListener('load', mark, { once: true })
+      img.addEventListener('error', mark, { once: true })
+      cleanups.push(() => {
+        img.removeEventListener('load', mark)
+        img.removeEventListener('error', mark)
+      })
+    })
+    const fallback = window.setTimeout(() => setLoaded((prev) => ({ ...prev, [active]: true })), 2500)
+    return () => {
+      cleanups.forEach((fn) => fn())
+      window.clearTimeout(fallback)
+    }
+  }, [active])
+  const listRef = useRef<HTMLDivElement>(null)
+
+  // Page-load choreography: left panel, then the visual, then the cards one by one.
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIntro(false), 4500 + projects.length * 140)
+    return () => window.clearTimeout(timer)
+  }, [projects.length])
+
+  const stageRef = useRef<HTMLDivElement>(null)
+
+  /** Freeze the outgoing visual at its current zoom so it cannot move under the wipe. */
+  const freezeCurrent = useCallback((index: number) => {
+    const media = stageRef.current?.querySelectorAll<HTMLElement>('.stage-media')[index]
+    const visual = media?.querySelector<HTMLElement>('img, video, .stage-placeholder')
+    if (!visual) return
+    const transform = getComputedStyle(visual).transform
+    visual.style.animation = 'none'
+    visual.style.transform = transform === 'none' ? '' : transform
+  }, [])
+
+  const select = useCallback(
+    (index: number) => {
+      setActive((current) => {
+        if (current === index) return current
+        freezeCurrent(current)
+        setPrevious(current)
+        return index
+      })
+    },
+    [freezeCurrent],
+  )
+
+  // The incoming visual always starts from the zoomed-out state: clear any frozen inline styles.
+  useEffect(() => {
+    const media = stageRef.current?.querySelectorAll<HTMLElement>('.stage-media')[active]
+    const visual = media?.querySelector<HTMLElement>('img, video, .stage-placeholder')
+    if (visual) {
+      visual.style.animation = ''
+      visual.style.transform = ''
+    }
+  }, [active])
+
+  const onKey = useCallback(
+    (event: React.KeyboardEvent) => {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+        event.preventDefault()
+        select((active + 1) % projects.length)
+      } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        event.preventDefault()
+        select((active - 1 + projects.length) % projects.length)
+      }
+    },
+    [active, projects.length, select],
+  )
+
+  useEffect(() => {
+    const el = listRef.current?.querySelectorAll<HTMLElement>('.project-row')[active]
+    el?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+  }, [active])
+
+  const project = projects[active]
+  if (!project) return null
+  const rollFrom = previous === null ? '00' : pad(previous + 1)
+
+  return (
+    <section
+      className={`yk${intro ? ' yk-intro' : ''}${loaded[active] ? ' yk-ready' : ''}`}
+      aria-label="Project explorer"
+      data-transition={look?.transition ?? 'wipe'}
+      data-zoom={look?.zoom === false ? 'off' : 'on'}
+      style={
+        {
+          ...(look?.cardColor ? { '--pp-card': look.cardColor } : {}),
+          ...(look?.cardTextColor ? { '--pp-card-text': look.cardTextColor } : {}),
+          ...(look?.arrowColor ? { '--pp-arrow': look.arrowColor } : {}),
+          ...(look?.stageBackground ? { '--pp-stage': look.stageBackground } : {}),
+          '--pp-zoom': `${look?.zoomSeconds ?? 14}s`,
+        } as React.CSSProperties
+      }
+    >
+      <div className="yk-stage" aria-live="polite" ref={stageRef}>
+        {projects.map((item, index) => {
+          const state = index === active ? 'active' : index === previous ? 'leaving' : 'idle'
+          return (
+            <div className={`stage-media ${state}`} key={item.id} aria-hidden={index !== active} data-accent={item.accent} data-ready={loaded[index] ? '' : undefined}>
+              {item.heroImage ? (
+                <Picture media={item.heroImage} size="original" sizes="(max-width: 960px) 100vw, 85vw" priority={index === 0} eager />
+              ) : item.heroVideo ? (
+                <video autoPlay loop muted playsInline preload={index === active ? 'auto' : 'metadata'} src={item.heroVideo.url} />
+              ) : (
+                <div className="stage-placeholder">
+                  <span className="mark">{item.title}</span>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+
+      <div className="yk-list" ref={listRef} onKeyDown={onKey} role="list">
+        {projects.map((item, index) => {
+          const number = pad(index + 1)
+          const current = index === active
+          const category = item.category ?? item.kindLabel
+          return (
+            <Link
+              key={item.id}
+              href={`/projects/${item.slug}`}
+              transitionTypes={['nav-forward']}
+              className={`project-row${current ? ' active' : ''}`}
+              data-accent={item.accent}
+              style={{ '--i': index, ...(item.style.cardColor ? { '--row-card': item.style.cardColor } : {}), ...(item.style.cardTextColor ? { '--row-card-text': item.style.cardTextColor } : {}) } as React.CSSProperties}
+              onMouseEnter={() => select(index)}
+              onFocus={() => select(index)}
+              aria-current={current ? 'true' : undefined}
+              role="listitem"
+              aria-label={`${number} ${item.title}, ${category}`}
+            >
+              {/* Card layer: slate background, large number, title, category, arrow. Fades in over the row. */}
+              <span className="card" aria-hidden="true">
+                <span className="card-n">{current && <RollingNumber from={rollFrom} to={number} />}</span>
+                <span className="card-text">
+                  <span className="card-t">{item.title}</span>
+                  <span className="card-k">{category}</span>
+                </span>
+                <span className="card-arrow">→</span>
+              </span>
+              {/* Row layer: number, thumbnail, tab. The thumbnail squeezes into the sliver on the card. */}
+              <span className="n">{number}</span>
+              <span className="thumb">
+                {item.thumbnail ? <Picture media={item.thumbnail} size="small" sizes="(max-width: 960px) 100vw, 120px" priority /> : item.heroImage ? <Picture media={item.heroImage} size="small" sizes="(max-width: 960px) 100vw, 120px" priority /> : <span className="thumb-blank" data-accent={item.accent} />}
+              </span>
+              <span className="tab">
+                <span className="tab-text">
+                  <span className="t">{item.title}</span>
+                  <span className="k">{category}</span>
+                </span>
+                <span className="tab-arrow" aria-hidden="true">
+                  →
+                </span>
+              </span>
+            </Link>
+          )
+        })}
+      </div>
+
+      <div className="stage-card sr-only" aria-live="polite">
+        <span className="t">{project.title}</span>
+      </div>
+    </section>
+  )
+}

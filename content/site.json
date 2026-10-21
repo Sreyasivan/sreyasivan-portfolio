@@ -1,0 +1,777 @@
+{
+  "$about": "Every setting and piece of content of this site. Edit it (or have an AI fill it in from your details; see docs/site-json.md) and import it in the admin under Admin panel → Import & export, or with pnpm content:import. Rich text is Markdown; images are { \"url\", \"alt\" }; links to other entries use their slug or title.",
+  "version": 1,
+  "exportedAt": null,
+  "source": "https://sreyasivan.me",
+  "globals": {
+    "site-settings": {
+      "displayName": "Sreya Sivan",
+      "fullName": "Sreya Sivan",
+      "tagline": "I build full-stack web apps and practical Generative AI, and I am going deep on data analytics.",
+      "description": "Sreya Sivan is a data science and AI developer in Coimbatore, India: Python, analytics, machine learning, Generative AI and full-stack MERN apps. B.Tech IT (2026), former AI intern at Prayag.ai, now studying Data Science with AI at DataMites.",
+      "canonicalUrl": "https://sreyasivan.me",
+      "currentRole": "Data Science & AI · Full-Stack (MERN)",
+      "location": "Coimbatore, India",
+      "socialLinks": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/Sreyasivan"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/sreyasivan"
+        }
+      ],
+      "email": "contact@sreyasivan.me",
+      "contactFormEnabled": false,
+      "resume": null,
+      "ogImage": {
+        "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-sivan-og.jpg",
+        "alt": "Sreya Sivan, data science and AI developer. Python, analytics, machine learning, Generative AI and full-stack MERN."
+      },
+      "footerNote": "Built with Next.js and Payload. Content managed from /admin."
+    },
+    "navigation": {
+      "items": [
+        {
+          "label": "Projects",
+          "href": "/projects",
+          "visible": true,
+          "newTab": false
+        },
+        {
+          "label": "./StdOut",
+          "href": "/notes",
+          "visible": true,
+          "newTab": false
+        },
+        {
+          "label": "About",
+          "href": "/about",
+          "visible": true,
+          "newTab": false
+        },
+        {
+          "label": "Contact",
+          "href": "/contact",
+          "visible": true,
+          "newTab": false
+        }
+      ],
+      "footerLinks": [],
+      "sidebarBackground": null,
+      "wordmarkColor": null,
+      "wordmarkDotColor": null,
+      "menuColor": null,
+      "menuActiveColor": null,
+      "menuFontSize": null,
+      "wordmarkFontSize": null
+    },
+    "pet": {
+      "enabled": false,
+      "showOnPhones": true,
+      "sprite": null,
+      "idleAfter": 30,
+      "idleAction": "work",
+      "idleRepeat": true,
+      "returnAction": "wave",
+      "clickAction": "wave",
+      "dropAction": "none",
+      "foundAction": "none",
+      "emptyAction": "jump",
+      "followCursor": true,
+      "stroll": true,
+      "strollEvery": 40
+    },
+    "coding-activity": {
+      "githubInSidebar": true,
+      "githubSidebarOpen": true,
+      "githubOnAbout": true,
+      "githubAboutOpen": true,
+      "githubAccounts": [
+        {
+          "username": "Sreyasivan",
+          "enabled": true
+        }
+      ],
+      "leetcodeInSidebar": false,
+      "leetcodeSidebarOpen": false,
+      "leetcodeOnAbout": false,
+      "leetcodeAboutOpen": false,
+      "leetcodeAccounts": []
+    },
+    "brand": {},
+    "appearance": {
+      "theme": "dark",
+      "accent": "blue",
+      "fontPreset": "inter",
+      "headingScale": "regular",
+      "spacing": "regular",
+      "radius": "pill",
+      "linkStyle": "underline",
+      "bubbleStyle": "pill",
+      "animationIntensity": "normal",
+      "animationSpeed": "normal",
+      "projectDisplayStyle": "explorer",
+      "colorBackground": null,
+      "colorSurface": null,
+      "colorText": null,
+      "colorMuted": null,
+      "colorAccent": null,
+      "colorLine": null,
+      "bodyFont": "preset",
+      "headingFont": "barlow-condensed"
+    },
+    "admin-look": {
+      "logoText": "sreyasivan.me",
+      "font": "system",
+      "radius": "default"
+    },
+    "admin-security": {
+      "githubStep": true
+    },
+    "homepage": {
+      "messages": [
+        {
+          "content": "Hi there 👋.",
+          "style": "default",
+          "revealDelay": null,
+          "enabled": true,
+          "choices": []
+        },
+        {
+          "content": "I'm Sreya.",
+          "style": "default",
+          "revealDelay": null,
+          "enabled": true,
+          "choices": []
+        },
+        {
+          "content": "I build full-stack web apps and practical Generative AI tools.",
+          "style": "default",
+          "revealDelay": null,
+          "enabled": true,
+          "choices": []
+        },
+        {
+          "content": "Right now I'm on a learning break, studying Data Science with AI at [DataMites](https://datamites.com): Python, machine learning, NLP and big data.",
+          "style": "default",
+          "revealDelay": null,
+          "enabled": true,
+          "choices": []
+        },
+        {
+          "content": "Before that I spent 11 months as an AI intern at [Prayag.ai](https://prayag.ai), automating data extraction from emails with GPT-4 and designing RAG chatbots.",
+          "style": "default",
+          "revealDelay": null,
+          "enabled": true,
+          "choices": []
+        },
+        {
+          "content": "See [my projects](/projects), or follow what I'm [learning in ./StdOut](/notes).",
+          "style": "default",
+          "revealDelay": null,
+          "enabled": true,
+          "choices": []
+        },
+        {
+          "content": "Want to chat? [Say hi](/contact), or [get to know me](/about) first.",
+          "style": "default",
+          "revealDelay": null,
+          "enabled": true,
+          "choices": []
+        }
+      ],
+      "animationPreset": "calm",
+      "typingIndicator": "dots",
+      "startDelay": 400,
+      "meta": {
+        "title": null,
+        "description": null
+      },
+      "pageBackground": null,
+      "bubbleColor": null,
+      "textColor": null,
+      "linkColor": null,
+      "_status": "published"
+    },
+    "projects-page": {
+      "imageTransition": "wipe",
+      "imageZoom": true,
+      "zoomSeconds": 14
+    },
+    "about": {
+      "eyebrow": "About",
+      "title": "Sreya Sivan",
+      "intro": "I'm Sreya. I build full-stack web apps and practical Generative AI, and I'm now going deep on data analytics.\n\nAt Prayag.ai I built an AI-powered business development agent in Python, used the OpenAI GPT-4 API to pull structured data out of client emails, and designed RAG-based chatbot architectures.\n\nI'm on a career break to study Data Science with AI at DataMites: Python, machine learning, NLP, database management, big data and automation. Looking for data analyst, data science, AI/ML and full-stack roles in Coimbatore, Bengaluru, Chennai or remote.",
+      "photo": {
+        "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-sivan-portrait.jpg",
+        "alt": "Sreya Sivan, portrait"
+      },
+      "photoFocalX": 50,
+      "photoFocalY": 35,
+      "sections": [
+        {
+          "title": "Experience",
+          "kind": "experience",
+          "visible": true,
+          "body": null,
+          "technologyGroups": []
+        },
+        {
+          "title": "Selected projects",
+          "kind": "projects",
+          "visible": true,
+          "body": null,
+          "technologyGroups": []
+        },
+        {
+          "title": "Technologies",
+          "kind": "technologies",
+          "visible": true,
+          "body": null,
+          "technologyGroups": [
+            {
+              "label": "Data & AI",
+              "items": "Python, OpenAI API, RAG, Generative AI, PostgreSQL, MongoDB"
+            },
+            {
+              "label": "Web",
+              "items": "JavaScript, React.js, Node.js, Express.js, REST APIs, JWT authentication, Chart.js, Git"
+            },
+            {
+              "label": "Also",
+              "items": "Java, web security (authentication and access control)"
+            },
+            {
+              "label": "Learning at DataMites",
+              "items": "Machine learning, advanced data science, NLP, database management, big data foundations, automation"
+            }
+          ]
+        },
+        {
+          "title": "Education",
+          "kind": "education",
+          "visible": true,
+          "body": null,
+          "technologyGroups": []
+        },
+        {
+          "title": "Certifications",
+          "kind": "certifications",
+          "visible": true,
+          "body": null,
+          "technologyGroups": []
+        }
+      ],
+      "meta": {
+        "title": null,
+        "description": null
+      },
+      "_status": "published"
+    }
+  },
+  "collections": {
+    "categories": [
+      {
+        "title": "Data Analytics",
+        "generateSlug": false,
+        "slug": "data-analytics",
+        "parent": null
+      },
+      {
+        "title": "Machine Learning",
+        "generateSlug": false,
+        "slug": "machine-learning",
+        "parent": null
+      },
+      {
+        "title": "Generative AI",
+        "generateSlug": false,
+        "slug": "generative-ai",
+        "parent": null
+      },
+      {
+        "title": "Python",
+        "generateSlug": false,
+        "slug": "python",
+        "parent": null
+      },
+      {
+        "title": "Full-Stack",
+        "generateSlug": false,
+        "slug": "full-stack",
+        "parent": null
+      },
+      {
+        "title": "Learning Notes",
+        "generateSlug": false,
+        "slug": "learning-notes",
+        "parent": null
+      }
+    ],
+    "experience": [
+      {
+        "role": "Artificial Intelligence Intern",
+        "company": "Prayag.ai",
+        "companyUrl": "https://prayag.ai",
+        "location": "Palakkad, India · On-site",
+        "startDate": "2025-06-01T00:00:00.000Z",
+        "endDate": "2026-04-01T00:00:00.000Z",
+        "current": false,
+        "summary": "Built AI tools for business development in Python. Internal work, not public.",
+        "highlights": [
+          {
+            "text": "Built an AI-powered business development agent in Python."
+          },
+          {
+            "text": "Integrated the OpenAI GPT-4 API to automate data extraction from client emails."
+          },
+          {
+            "text": "Designed RAG-based chatbot architectures."
+          }
+        ],
+        "technologies": [
+          {
+            "name": "Python"
+          },
+          {
+            "name": "OpenAI GPT-4 API"
+          },
+          {
+            "name": "RAG"
+          },
+          {
+            "name": "LLMs"
+          }
+        ],
+        "order": 0,
+        "_status": "published"
+      }
+    ],
+    "education": [
+      {
+        "institution": "DataMites",
+        "degree": "Data Science with AI (certification course)",
+        "field": "Python, ML, NLP, big data, AI and automation",
+        "startDate": "2026-06-01T00:00:00.000Z",
+        "endDate": null,
+        "location": "Coimbatore, India",
+        "notes": "Career break for full-time study: Python, machine learning, advanced data science, database management, big data foundations, Artificial Intelligence and automation, and NLP. June 2026 to present.",
+        "order": 0,
+        "_status": "published"
+      },
+      {
+        "institution": "Karpagam Institute of Technology",
+        "degree": "Bachelor of Technology",
+        "field": "Information Technology",
+        "startDate": "2022-11-01T00:00:00.000Z",
+        "endDate": "2026-04-01T00:00:00.000Z",
+        "location": "Coimbatore, India",
+        "notes": "CGPA 7.83",
+        "order": 1,
+        "_status": "published"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Web Security: User Authentication and Access Control",
+        "issuer": "LinkedIn Learning",
+        "year": "2025",
+        "url": null,
+        "order": 0,
+        "_status": "published"
+      }
+    ],
+    "publications": [],
+    "projects": [
+      {
+        "client": null,
+        "startDate": null,
+        "completionDate": null,
+        "thumbnail": null,
+        "heroImage": null,
+        "heroVideo": null,
+        "screenshots": [],
+        "demoVideoUrl": null,
+        "cardColor": null,
+        "cardTextColor": null,
+        "pageBackground": null,
+        "pageTextColor": null,
+        "heroLoop": [],
+        "loopSeconds": 5,
+        "layoutPreset": "case-study",
+        "githubUrl": null,
+        "liveDemoUrl": null,
+        "documentationUrl": null,
+        "releasesUrl": null,
+        "meta": {
+          "title": null,
+          "image": null,
+          "description": null
+        },
+        "archived": false,
+        "generateSlug": false,
+        "_status": "published",
+        "title": "Zero-ETL Analytics Platform",
+        "slug": "zero-etl-analytics-platform",
+        "summary": "An analytics dashboard that queries data where it lives: live Postgres tables joined with Parquet logs in object storage, through DuckDB, with no copy pipeline.",
+        "description": "In progress. A federated analytics platform: instead of an ETL pipeline that copies data everywhere, DuckDB queries the application database and the raw logs in place and joins them for one dashboard. The aim is to keep data movement and egress costs low.",
+        "kind": "personal",
+        "category": "Data analytics",
+        "year": "2026, in progress",
+        "role": "Sole author",
+        "technologies": [
+          {
+            "name": "DuckDB"
+          },
+          {
+            "name": "PostgreSQL"
+          },
+          {
+            "name": "Supabase"
+          },
+          {
+            "name": "Parquet"
+          },
+          {
+            "name": "MinIO / AWS S3"
+          },
+          {
+            "name": "Python"
+          },
+          {
+            "name": "Streamlit"
+          }
+        ],
+        "tags": [
+          {
+            "name": "Analytics"
+          },
+          {
+            "name": "Data engineering"
+          },
+          {
+            "name": "In progress"
+          }
+        ],
+        "featured": true,
+        "displayOrder": 0,
+        "accent": "blue",
+        "layout": [
+          {
+            "blockType": "features",
+            "heading": "The design",
+            "items": [
+              {
+                "title": "Sources",
+                "text": "PostgreSQL (Supabase) for live user profiles, and raw web logs stored as Parquet files in S3-compatible storage (MinIO locally)."
+              },
+              {
+                "title": "Engine",
+                "text": "DuckDB reads both in place and acts as the semantic and transformation layer: no warehouse to load first."
+              },
+              {
+                "title": "Dashboard",
+                "text": "An interactive dashboard (Streamlit, Evidence.dev or Marimo) on top of the DuckDB models."
+              },
+              {
+                "title": "Why",
+                "text": "Moving less data means lower egress and storage costs and fresher numbers, a real pain point for data teams."
+              }
+            ],
+            "blockName": null
+          },
+          {
+            "blockType": "timeline",
+            "heading": "Status",
+            "items": [
+              {
+                "when": "2026",
+                "title": "Designing",
+                "text": "Architecture and data model. The code will be public on GitHub as it is built."
+              }
+            ],
+            "blockName": null
+          }
+        ]
+      },
+      {
+        "client": null,
+        "startDate": null,
+        "completionDate": null,
+        "thumbnail": null,
+        "heroImage": null,
+        "heroVideo": null,
+        "screenshots": [],
+        "demoVideoUrl": null,
+        "cardColor": null,
+        "cardTextColor": null,
+        "pageBackground": null,
+        "pageTextColor": null,
+        "heroLoop": [],
+        "loopSeconds": 5,
+        "layoutPreset": "case-study",
+        "githubUrl": null,
+        "liveDemoUrl": null,
+        "documentationUrl": null,
+        "releasesUrl": null,
+        "meta": {
+          "title": null,
+          "image": null,
+          "description": null
+        },
+        "archived": false,
+        "generateSlug": false,
+        "_status": "published",
+        "title": "Financial Analytics & Expense Tracker",
+        "slug": "financial-analytics-expense-tracker",
+        "summary": "A MERN dashboard that charts spending, with JWT sign-in and a MongoDB data model.",
+        "description": "A full-stack expense tracker with an analytics dashboard: spending charts built with Chart.js, JWT authentication, and a MongoDB schema designed for the reports.",
+        "kind": "personal",
+        "category": "Analytics dashboard",
+        "year": "",
+        "role": "Sole author",
+        "technologies": [
+          {
+            "name": "MongoDB"
+          },
+          {
+            "name": "Express.js"
+          },
+          {
+            "name": "React.js"
+          },
+          {
+            "name": "Node.js"
+          },
+          {
+            "name": "Chart.js"
+          },
+          {
+            "name": "JWT"
+          }
+        ],
+        "tags": [
+          {
+            "name": "Analytics"
+          },
+          {
+            "name": "MERN"
+          },
+          {
+            "name": "Dashboard"
+          }
+        ],
+        "featured": true,
+        "displayOrder": 1,
+        "accent": "green",
+        "layout": [
+          {
+            "blockType": "features",
+            "heading": "What it does",
+            "items": [
+              {
+                "title": "Spending charts",
+                "text": "Chart.js charts that break spending down so patterns are easy to see."
+              },
+              {
+                "title": "Accounts",
+                "text": "JWT-based sign-in, so each user sees only their own data."
+              },
+              {
+                "title": "Data model",
+                "text": "A MongoDB schema shaped around the dashboard queries."
+              }
+            ],
+            "blockName": null
+          }
+        ]
+      },
+      {
+        "client": null,
+        "startDate": null,
+        "completionDate": null,
+        "thumbnail": null,
+        "heroImage": null,
+        "heroVideo": null,
+        "screenshots": [],
+        "demoVideoUrl": null,
+        "cardColor": null,
+        "cardTextColor": null,
+        "pageBackground": null,
+        "pageTextColor": null,
+        "heroLoop": [],
+        "loopSeconds": 5,
+        "layoutPreset": "case-study",
+        "githubUrl": null,
+        "liveDemoUrl": null,
+        "documentationUrl": null,
+        "releasesUrl": null,
+        "meta": {
+          "title": null,
+          "image": null,
+          "description": null
+        },
+        "archived": false,
+        "generateSlug": false,
+        "_status": "published",
+        "title": "Notes App (MERN)",
+        "slug": "notes-app-mern",
+        "summary": "A secure notes app: create, edit and delete notes, with JWT sign-in so each user sees only their own.",
+        "description": "A full-stack notes application built with MongoDB, Express.js, React.js and Node.js. Users create, edit, delete and organise their notes in a responsive interface. JWT-based authentication and encrypted storage keep each user’s notes private.",
+        "kind": "personal",
+        "category": "Full-stack app",
+        "year": "",
+        "role": "Sole author",
+        "technologies": [
+          {
+            "name": "MongoDB"
+          },
+          {
+            "name": "Express.js"
+          },
+          {
+            "name": "React.js"
+          },
+          {
+            "name": "Node.js"
+          },
+          {
+            "name": "JWT"
+          }
+        ],
+        "tags": [
+          {
+            "name": "MERN"
+          },
+          {
+            "name": "Authentication"
+          }
+        ],
+        "featured": false,
+        "displayOrder": 2,
+        "accent": "violet",
+        "layout": [
+          {
+            "blockType": "features",
+            "heading": "What it does",
+            "items": [
+              {
+                "title": "Notes",
+                "text": "Create, edit, delete and organise notes."
+              },
+              {
+                "title": "Privacy",
+                "text": "JWT authentication and encrypted storage: each user can open only their own notes."
+              },
+              {
+                "title": "Responsive",
+                "text": "Works on phones and desktops."
+              }
+            ],
+            "blockName": null
+          }
+        ]
+      },
+      {
+        "client": null,
+        "startDate": null,
+        "completionDate": null,
+        "thumbnail": null,
+        "heroImage": null,
+        "heroVideo": null,
+        "screenshots": [],
+        "demoVideoUrl": null,
+        "cardColor": null,
+        "cardTextColor": null,
+        "pageBackground": null,
+        "pageTextColor": null,
+        "heroLoop": [],
+        "loopSeconds": 5,
+        "layoutPreset": "case-study",
+        "githubUrl": null,
+        "liveDemoUrl": null,
+        "documentationUrl": null,
+        "releasesUrl": null,
+        "meta": {
+          "title": null,
+          "image": null,
+          "description": null
+        },
+        "archived": false,
+        "generateSlug": false,
+        "_status": "draft",
+        "title": "Student Portal",
+        "slug": "student-portal",
+        "summary": "A MERN student portal with role-based access.",
+        "description": "A role-based student portal system built on the MERN stack.",
+        "kind": "personal",
+        "category": "Full-stack app",
+        "year": "",
+        "role": "",
+        "technologies": [
+          {
+            "name": "MongoDB"
+          },
+          {
+            "name": "Express.js"
+          },
+          {
+            "name": "React.js"
+          },
+          {
+            "name": "Node.js"
+          }
+        ],
+        "tags": [
+          {
+            "name": "MERN"
+          },
+          {
+            "name": "Access control"
+          }
+        ],
+        "featured": false,
+        "displayOrder": 3,
+        "accent": "orange",
+        "layout": []
+      }
+    ],
+    "posts": [
+      {
+        "title": "Example draft: how publishing works here",
+        "heroImage": null,
+        "content": "This is an example draft. Drafts are never shown on the public site. Use Preview in the admin to see this page, then Publish when a real post is ready.",
+        "relatedPosts": [],
+        "categories": [
+          "learning-notes"
+        ],
+        "meta": {
+          "title": "Example draft",
+          "image": null,
+          "description": "An unpublished example."
+        },
+        "publishedAt": null,
+        "authors": [],
+        "populatedAuthors": [],
+        "generateSlug": false,
+        "slug": "example-draft-publishing-workflow",
+        "_status": "draft"
+      }
+    ],
+    "pages": []
+  },
+  "media": [
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-sivan-og.jpg",
+      "filename": "sreya-sivan-og.jpg",
+      "alt": "Sreya Sivan, data science and AI developer. Python, analytics, machine learning, Generative AI and full-stack MERN."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-sivan-portrait.jpg",
+      "filename": "sreya-sivan-portrait.jpg",
+      "alt": "Sreya Sivan, portrait"
+    }
+  ]
+}
