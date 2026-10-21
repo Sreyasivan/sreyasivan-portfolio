@@ -68,9 +68,12 @@
       "wordmarkFontSize": null
     },
     "pet": {
-      "enabled": false,
+      "enabled": true,
       "showOnPhones": true,
-      "sprite": null,
+      "sprite": {
+        "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-pet.webp",
+        "alt": "Sreya Sivan pet sprite sheet"
+      },
       "idleAfter": 30,
       "idleAction": "work",
       "idleRepeat": true,
@@ -816,6 +819,11 @@
       "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-cover-v2.jpg",
       "filename": "student-portal-cover-v2.jpg",
       "alt": "Student Portal: illustration of role-based access cards"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-pet.webp",
+      "filename": "sreya-pet.webp",
+      "alt": "Sreya Sivan pet sprite sheet"
     }
   ]
 }
