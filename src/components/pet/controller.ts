@@ -335,8 +335,8 @@ export class PetController {
     const from = { ...this.pos }
     const total = Math.hypot(x - from.x, y - from.y)
     const duration = (total / speed) * 1000 * 1.25
-    // Faster trips (walking home) step a little quicker, never frantically.
-    const fps = STEP_FPS * Math.min(1.5, Math.max(1, speed / WALK_SPEED / 2))
+    // Faster trips (walking home) step only slightly quicker.
+    const fps = STEP_FPS * Math.min(1.25, Math.max(1, speed / WALK_SPEED / 2))
     const start = performance.now()
     const step = (now: number) => {
       const t = Math.min(1, (now - start) / duration)
@@ -356,8 +356,8 @@ export class PetController {
     this.atHome = true
     this.onDrop?.(true)
     const x = this.home.x + this.offset
-    // Long trips home take about a second and a half; short ones keep the stroll pace.
-    this.walkTo(x, this.home.y, then, clamp(Math.hypot(x - this.pos.x, this.home.y - this.pos.y) / 3, WALK_SPEED * 1.5, 180))
+    // Walks home at an easy pace: a little quicker than a stroll on long trips, never a run.
+    this.walkTo(x, this.home.y, then, clamp(Math.hypot(x - this.pos.x, this.home.y - this.pos.y) / 4, WALK_SPEED, 80))
   }
 
   /** A stroll to the other side of its spot; false when it can't go (away, busy, or no room). */
@@ -420,8 +420,8 @@ export class PetController {
       const speed = Math.hypot(vx, (ny - this.pos.y) / dt)
       this.place(nx, ny)
       if (Math.abs(vx) > 25) dd.dir = vx > 0 ? 1 : -1
-      // Legs keep moving while held, at a steady pace that quickens a little with a fast drag.
-      dd.phase += dt * (7 + Math.min(5, speed / 150))
+      // Legs keep moving while held, at a slow, steady pace that quickens only slightly with a fast drag.
+      dd.phase += dt * (STEP_FPS + Math.min(1.5, speed / 300))
       const gait = STATES[dd.dir > 0 ? 'running-right' : 'running-left']
       this.show(gait.row, Math.floor(dd.phase) % gait.frames)
       if (!this.reduced) {
