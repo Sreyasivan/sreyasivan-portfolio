@@ -393,12 +393,12 @@
         "startDate": null,
         "completionDate": null,
         "thumbnail": {
-          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-cover-v2.jpg",
-          "alt": "Zero-ETL Analytics Platform: PostgreSQL and Parquet logs in S3 queried in place by DuckDB, feeding a dashboard, with no ETL copy pipeline"
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-photo.jpg",
+          "alt": "Analytics metrics on a bright monitor (stock photo, Unsplash)"
         },
         "heroImage": {
-          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-cover-v2.jpg",
-          "alt": "Zero-ETL Analytics Platform: PostgreSQL and Parquet logs in S3 queried in place by DuckDB, feeding a dashboard, with no ETL copy pipeline"
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-photo.jpg",
+          "alt": "Analytics metrics on a bright monitor (stock photo, Unsplash)"
         },
         "heroVideo": null,
         "screenshots": [],
@@ -510,12 +510,12 @@
         "startDate": null,
         "completionDate": null,
         "thumbnail": {
-          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-cover-v2.jpg",
-          "alt": "Financial Analytics & Expense Tracker: illustration of a spending dashboard with line, donut and bar charts and JWT sign-in"
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-photo.jpg",
+          "alt": "Laptop showing an analytics dashboard with charts (stock photo, Unsplash)"
         },
         "heroImage": {
-          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-cover-v2.jpg",
-          "alt": "Financial Analytics & Expense Tracker: illustration of a spending dashboard with line, donut and bar charts and JWT sign-in"
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-photo.jpg",
+          "alt": "Laptop showing an analytics dashboard with charts (stock photo, Unsplash)"
         },
         "heroVideo": null,
         "screenshots": [],
@@ -608,12 +608,12 @@
         "startDate": null,
         "completionDate": null,
         "thumbnail": {
-          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-cover-v2.jpg",
-          "alt": "Notes App: illustration of colourful note cards with a lock for private, per-user notes"
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-photo.jpg",
+          "alt": "Open notebook headed \"Notes\" with a fountain pen and glasses (stock photo, Unsplash)"
         },
         "heroImage": {
-          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-cover-v2.jpg",
-          "alt": "Notes App: illustration of colourful note cards with a lock for private, per-user notes"
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-photo.jpg",
+          "alt": "Open notebook headed \"Notes\" with a fountain pen and glasses (stock photo, Unsplash)"
         },
         "heroVideo": null,
         "screenshots": [],
@@ -700,12 +700,12 @@
         "startDate": null,
         "completionDate": null,
         "thumbnail": {
-          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-cover-v2.jpg",
-          "alt": "Student Portal: illustration of role-based access cards"
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-photo.jpg",
+          "alt": "Three students working together on laptops (stock photo, Unsplash)"
         },
         "heroImage": {
-          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-cover-v2.jpg",
-          "alt": "Student Portal: illustration of role-based access cards"
+          "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-photo.jpg",
+          "alt": "Three students working together on laptops (stock photo, Unsplash)"
         },
         "heroVideo": null,
         "screenshots": [],
@@ -801,29 +801,29 @@
       "alt": "Sreya Sivan, portrait"
     },
     {
-      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-cover-v2.jpg",
-      "filename": "zero-etl-cover-v2.jpg",
-      "alt": "Zero-ETL Analytics Platform: PostgreSQL and Parquet logs in S3 queried in place by DuckDB, feeding a dashboard, with no ETL copy pipeline"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-cover-v2.jpg",
-      "filename": "finance-tracker-cover-v2.jpg",
-      "alt": "Financial Analytics & Expense Tracker: illustration of a spending dashboard with line, donut and bar charts and JWT sign-in"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-cover-v2.jpg",
-      "filename": "notes-app-cover-v2.jpg",
-      "alt": "Notes App: illustration of colourful note cards with a lock for private, per-user notes"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-cover-v2.jpg",
-      "filename": "student-portal-cover-v2.jpg",
-      "alt": "Student Portal: illustration of role-based access cards"
-    },
-    {
       "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/sreya-pet.webp",
       "filename": "sreya-pet.webp",
       "alt": "Sreya Sivan pet sprite sheet"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/zero-etl-photo.jpg",
+      "filename": "zero-etl-photo.jpg",
+      "alt": "Analytics metrics on a bright monitor (stock photo, Unsplash)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/finance-tracker-photo.jpg",
+      "filename": "finance-tracker-photo.jpg",
+      "alt": "Laptop showing an analytics dashboard with charts (stock photo, Unsplash)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/notes-app-photo.jpg",
+      "filename": "notes-app-photo.jpg",
+      "alt": "Open notebook headed \"Notes\" with a fountain pen and glasses (stock photo, Unsplash)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sreyasivan/sreyasivan-portfolio/main/content/media/student-portal-photo.jpg",
+      "filename": "student-portal-photo.jpg",
+      "alt": "Three students working together on laptops (stock photo, Unsplash)"
     }
   ]
 }
